@@ -16,8 +16,12 @@ module.exports = gql`
     ): [Session]
     sessionById(id: ID): Session
     speakers: [Speaker]
-    speakerById: Speaker
+    speakerById(id: ID): Speaker
   }
+  type Mutation {
+    makeSpeakerFeatured(id: ID): Speaker
+  }
+
   type Speaker {
     id: ID!
     bio: String

@@ -15,6 +15,13 @@ class SpeakerAPI extends RESTDataSource {
     const data = await this.get('/');
     return data;
   }
+
+  async makeSpeakerFeatured(id) {
+    const data = await this.patch(`/${id}`, {
+      featured: true,
+    });
+    return data;
+  }
 }
 
 module.exports = SpeakerAPI;
